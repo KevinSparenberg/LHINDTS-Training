@@ -7,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-
+  showCustomized=false;
+  showPrepared=true;
   constructor() { }
 
   ngOnInit() {
   }
 
+  individuel(){
+    this.showPrepared=false;
+    this.showCustomized=true;
+
+  }
+
+  prepared(){
+    this.showCustomized=false;
+    this.showPrepared=true;
+  }
 }

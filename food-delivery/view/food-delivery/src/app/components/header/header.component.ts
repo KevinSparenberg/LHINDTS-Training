@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  title = "Ich bin der Header";
+  title = "Home";
+  foodTitle = "Speisekarte";
+  drinkTitle = "Getränke";
+  aboutUs = "Ueber uns"
+  login = "Login";
+  numberOfSales = 2;
 
   constructor() { }
 

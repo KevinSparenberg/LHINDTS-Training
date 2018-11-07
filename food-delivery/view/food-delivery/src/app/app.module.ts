@@ -13,6 +13,9 @@ import {LoginComponent} from './components/login/login.component';
 import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
 import { HomeComponent } from './components/home/home.component';
 import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, MatIconModule} from '@angular/material';
+import { SummaryComponent } from './components/summary/summary.component';
+import { PreparedPizzaComponent } from './components/prepared-pizza/prepared-pizza.component';
+import { CustomizedPizzaComponent } from './components/customized-pizza/customized-pizza.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, M
     ShoppingCartComponent,
     PaymentComponent,
     ShoppingCartComponent,
-    HomeComponent
+    HomeComponent,
+    SummaryComponent,
+    PreparedPizzaComponent,
+    CustomizedPizzaComponent
   ],
   imports: [
     BrowserModule,

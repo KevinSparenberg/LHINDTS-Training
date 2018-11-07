@@ -1,0 +1,28 @@
+<div>
+
+  <p>
+    Wählen Sie eine der folgenden Pizza!
+  </p>
+
+  <div>
+    <ul class="heroes" style="list-style: none; text-align: left">
+      <li *ngFor="let pizza of pizzas">
+        <form action="">
+          <input type="radio" name="gender" value="{{pizza.id}}"><span>{{pizza.id}}</span> {{pizza.name}} - {{pizza.price}}€ - Radius: {{pizza.radius}}
+        </form>
+
+
+      </li>
+    </ul>
+    <button style="background-color:lawngreen;border-radius: .5em">Hinzufügen</button>
+  </div>
+
+ <!-- <form action="">
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="radio" name="gender" value="other"> Other
+  </form>-->
+
+</div>
+
+

@@ -1,11 +1,36 @@
 
-<app-header></app-header>
+  <app-header></app-header>
 
-<div style="min-height: 700px; width: 100%;border: 1px solid">
-  <div >
+
+
+<div style="height:500px;width: 100%;border: 1px solid">
+  <div style="height: 100%;width:70%;display: inline-block;border: 1px solid">
     <p>
-      home works!
+    Wählen Sie ihre Lieblingspizza aus!
     </p>
+  <div style="padding-top: 30px;float: left; ">
+    <nav>
+      <a (click)="individuel()">Individuell</a>
+      <a (click)="prepared()" style="padding-left: 20px">Vorgefretigt</a>
+    </nav>
+    <div style="height: 400px;width: 150%;border: 1px solid;">
+      <div *ngIf="showCustomized" style="padding-right: 20px">
+        <app-customized-pizza></app-customized-pizza>
+      </div>
+      <div *ngIf="showPrepared">
+        <app-prepared-pizza></app-prepared-pizza>
+      </div>
+
+    </div>
+  </div>
+
+
+  </div>
+
+  <div style="height: 100%;width:30%;display: inline-block;border: 1px solid;padding-left: 20px">
+    <div>
+      <app-summary></app-summary>
+    </div>
   </div>
 
 </div>
