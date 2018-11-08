@@ -10,6 +10,7 @@ export class CartServiceService {
 
    _numberOfSales:Subject<number>=new Subject();
    selectedPizza:Subject<Pizza>=new Subject();
+   allPizzas:Pizza[];
 
   constructor() {
   }
@@ -23,6 +24,7 @@ export class CartServiceService {
   }
 
   setPizza(pizzer:Pizza){
+    //this.allPizzas.push(pizzer);
     this.selectedPizza.next(pizzer);
   }
 
