@@ -2,17 +2,18 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PaymentComponent } from './components/payment/payment.component';
+import {HeaderComponent} from './components/header/header.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {PaymentComponent} from './components/payment/payment.component';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {LoginComponent} from './components/login/login.component';
 import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.component';
-import { HomeComponent } from './components/home/home.component';
-import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, MatIconModule} from '@angular/material';
+import {HomeComponent} from './components/home/home.component';
+import {UserComponent} from './components/user/user.component';
+import {FormsModule} from '@angular/forms';
+import {CustomMaterialModule} from './core/material.module';
 
 
 @NgModule({
@@ -24,17 +25,15 @@ import {MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, M
     ShoppingCartComponent,
     PaymentComponent,
     ShoppingCartComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatGridListModule,
-    MatInputModule,
-    MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    CustomMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

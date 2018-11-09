@@ -1,86 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>My First App</span>
+    <span class="example-fill-remaining-space"></span>
+    <span class="align-center"></span>
+    <span class="example-spacer"></span>
+    <button mat-button>About</button>
+    <button mat-button>Contact</button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
 
-<p>
-  Login Page
-</p>
-
-
-<!--
-    Login template using Angular Material
-    @author Shashank Tiwari
--->
-
-<!-- Application header starts -->
-<!--<div class="app-header">-->
-  <!--&lt;!&ndash;<h1 class="app-heading">{{title}}</h1>&ndash;&gt;-->
-<!--</div>-->
-<!-- Application header ends -->
-
-<mat-grid-list cols="3">
-  <mat-grid-tile></mat-grid-tile>
-
-  <!-- Writing markup for login starts -->
-  <mat-grid-tile class='login-element'>
-    <div class="login-container">
-      <div style=" background-color: #d7e8ff; width: 100%; height: 5%; text-align: center">
-          <img src="http://www.juanjez.com/2016/wp-content/uploads/2016/07/Food-Delivery-logoOK-03-1.jpg" height="100" width="600px">
-      </div>
-      <!-- Template Header starts -->
-      <!--<div class="login-box-header">-->
-        <!--&lt;!&ndash;<img src="http://www.codershood.info/wp-content/uploads/2015/12/codershood.info-logo1.png">&ndash;&gt;-->
-      <!--</div>-->
-      <!-- Template Header ends -->
-
-      <!-- Template Body starts -
-      <div class="login-box-body">
-
-        <!-- Markup for getting Username starts -->
-        <mat-grid-list cols="9" rowHeight="200px">
-          <mat-grid-tile [rowspan]="1" class="login-icon">
-            <!--<mat-icon>lock</mat-icon>-->
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="7">
-            <!--<mat-input-container class="justifier">-->
-            <div style="padding-top: 50px">
-              <input matInput placeholder="Username" text="text" title="Username">
-            </div>
-
-            <!--</mat-input-container>-->
-          </mat-grid-tile>
-        </mat-grid-list>
-        <!-- Markup for getting Username ends -->
-
-        <!-- Markup for getting Password starts -->
-        <mat-grid-list cols="9" rowHeight="100px">
-          <mat-grid-tile [rowspan]="1"  class="login-icon">
-            <!--<mat-icon>remove_red_eye</mat-icon>-->
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="7">
-            <!--<mat-input-container class="justifier">-->
-            <div>
-              <input matInput placeholder="Password" text="password" title="Password">
-            </div>
-
-            <!--</mat-input-container>-->
-          </mat-grid-tile>
-        </mat-grid-list>
-        <!-- Markup for getting Password ends -->
-
-        <!--<button mat-raised-button class="login-button" (click)="login()" >
-          <mat-icon><a href="/home">Login</a></mat-icon>
-        </button>-->
-      <div class="login-btn-position">
-        <a href="/home">
-          <button class="login-btn">
-            Login
-          </button>
-        </a>
-      </div>
-
-      </div>
-
-  </mat-grid-tile>
-  <!-- Writing markup for login ends -->
-  <mat-grid-tile></mat-grid-tile>
-
-</mat-grid-list>
-
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voicemail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
