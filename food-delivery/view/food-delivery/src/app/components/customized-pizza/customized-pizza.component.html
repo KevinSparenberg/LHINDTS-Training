@@ -1,9 +1,37 @@
 <div style="display: inline-block;float: left;border: 1px solid;">
-  Größe
+  <button (click)="showDiffSizes()">Größe</button>
+  <div *ngIf="diffSizes">
+      Hier können verschiedene Größen ausgewählt werden.
+    <div>
+      <ul>
+        <form action="">
+          <li *ngFor="let size  of sizes" style="list-style: none; text-align: left">
+            <input (click)="selectedSize(size)" type="radio" name="gender" value="{{size.id}}"><span>{{size.id}}</span> - Typ: {{size.sizeType}} - Radius: {{size.radius}}
+          </li>
+        </form>
+      </ul>
+    </div>
+    <button (click)="showDiffIngredients()">Weiter</button>
+  </div>
 </div>
+
+
+
+
 <div style="display: inline-block;float:left;border: 1px solid;">
-  Zutaten
+  <button (click)="showDiffIngredients()">Zutaten</button>
+  <div *ngIf="diffIngredients">
+      Hier können verschiedene Zutaten hinzugefügt werden.
+  </div>
+  <button (click)="showDiffSizes()">< Größen</button><button (click)="showDeliveryTime()"> Lieferzeitpunkt > </button>
 </div>
+
+
 <div style="display: inline-block;float:left;padding-right: 20px;border: 1px solid;">
-  Lieferzeitpunkt
+  <div>
+    <button (click)="showDeliveryTime()">Lieferdatum</button>
+  </div>
+  <div *ngIf="deliveryTime">
+    Hier kann sein Lieferdatum auswählen.
+  </div>
 </div>
