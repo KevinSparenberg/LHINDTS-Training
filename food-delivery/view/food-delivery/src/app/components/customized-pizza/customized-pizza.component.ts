@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {SIZES} from "../../mock-sizes";
+import {INGREDIANTS} from "../../mock-ingredients";
+import {MatButton} from "@angular/material";
+import {Ingredients} from "../../ingredients";
+import { CartServiceService} from "../../cart-service.service";
 
 @Component({
   selector: 'app-customized-pizza',
@@ -9,19 +13,18 @@ import {SIZES} from "../../mock-sizes";
 export class CustomizedPizzaComponent implements OnInit {
 
   sizes=SIZES;
-
+  ingrediants=INGREDIANTS;
+  allSelectedIngredients:Ingredients[];
   diffSizes=true;
   diffIngredients=false;
   deliveryTime=false;
 
-  constructor() { }
+  constructor(private cartService:CartServiceService) { }
 
   ngOnInit() {
   }
 
-  selectedSize(size){
-    alert(size.sizeType+"wurde ausgewählt")
-  }
+
 
   showDiffSizes(){
     this.diffIngredients=false;
@@ -41,4 +44,17 @@ export class CustomizedPizzaComponent implements OnInit {
     this.deliveryTime=true;
   }
 
+  selectedSize(size){
+    this.cartService.setSelectedSize(size);
+    alert(size.sizeType+"wurde ausgewählt");
+  }
+
+  selectedIngrediant(ingrediant){
+    alert("Sie haben die Zutat: "+ingrediant.name+" ausgewählt!");
+  }
+
+  selectDeliverDate(){
+    alert("Lieferdatum ausgewählt. ");
+  }
 }
+

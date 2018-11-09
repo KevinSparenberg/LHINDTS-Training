@@ -1,3 +1,5 @@
+
+
 <div style="display: inline-block;float: left;border: 1px solid;">
   <button (click)="showDiffSizes()">Größe</button>
   <div *ngIf="diffSizes">
@@ -22,16 +24,49 @@
   <button (click)="showDiffIngredients()">Zutaten</button>
   <div *ngIf="diffIngredients">
       Hier können verschiedene Zutaten hinzugefügt werden.
+    <br>
+    <div>
+        <ul>
+          <form action="">
+            <li *ngFor="let ingrediant of ingrediants" style="list-style: none; text-align: left">
+              <input (click)="selectedIngrediant(ingrediant)" type="checkbox" value="{{ingrediant.id}}">  {{ingrediant.name}}
+            </li>
+          </form>
+        </ul>
+    </div>
+    <br>
+    <button (click)="showDiffSizes()">< Zurück</button><button (click)="showDeliveryTime()"> Weiter > </button>
+    <div>
+      Ausgewählte Zutaten:
+      <ul>
+        <li *ngFor="let ingr of allSelectedIngredients">
+         {{ingr.id}} {{ingr.name}}
+        </li>
+      </ul>
+    </div>
+
   </div>
-  <button (click)="showDiffSizes()">< Größen</button><button (click)="showDeliveryTime()"> Lieferzeitpunkt > </button>
+
 </div>
 
 
-<div style="display: inline-block;float:left;padding-right: 20px;border: 1px solid;">
+<div style="display: inline-block;float:left;border: 1px solid;">
   <div>
     <button (click)="showDeliveryTime()">Lieferdatum</button>
   </div>
   <div *ngIf="deliveryTime">
     Hier kann sein Lieferdatum auswählen.
+    <div>
+      <mat-form-field>
+        <input (click)="selectDeliverDate()" matInput [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" placeholder="Lieferzeitpunkt wählen">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+      <input type="time" value="20:15" >
+
+    </div>
+    <br>
+    <button (click)="showDiffIngredients()">< Zurück</button>
   </div>
 </div>

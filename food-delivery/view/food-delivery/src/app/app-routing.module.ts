@@ -5,6 +5,7 @@ import {ShoppingCartComponent} from './components/shopping-cart/shopping-cart.co
 import {HomeComponent} from './components/home/home.component';
 import {PreparedPizzaComponent} from "./components/prepared-pizza/prepared-pizza.component";
 import {CustomizedPizzaComponent} from "./components/customized-pizza/customized-pizza.component";
+import {PaymentComponent} from "./components/payment/payment.component";
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'prepared', component: PreparedPizzaComponent},
-  {path:'customized', component: CustomizedPizzaComponent}
+  {path:'customized', component: CustomizedPizzaComponent},
+  {path: 'payment', component: PaymentComponent}
 ];
 @NgModule({
 
