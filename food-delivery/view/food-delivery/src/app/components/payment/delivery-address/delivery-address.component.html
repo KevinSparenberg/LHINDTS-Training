@@ -1,0 +1,44 @@
+<div style="background-color: white; width: 80%; height: 786px;text-align: left; ">
+  <div style="padding-top: 10%; padding-left: 30%; width: 60%">
+   <!-- For border style="border: 1px solid dodgerblue"-->
+    <div >
+    <p style="font-size: 150%;font-weight: bold; ">
+      Lieferort eingeben
+    </p>
+    <label style="font-size: 125%">Vorname: </label> <input [value]="" (input)="vorname = $event.target.value"
+                                                            type="text" placeholder="Ihr Vorname"
+                                                            maxlength="15"><br>
+    <label style="font-size: 125%">Nachaname: </label><input [value]="" (input)="nachname = $event.target.value"
+                                                             type="text" placeholder="Ihr Nachname"
+                                                             maxlength="15"><br>
+    <label style="font-size: 125%">Straße, Nr:</label><input [value]="" (input)="strasse = $event.target.value"
+                                                             type="text" placeholder="Straße"><input [value]=""
+                                                                                                     (input)="hnr = $event.target.value"
+                                                                                                     type="text"
+                                                                                                     placeholder="Nr."
+                                                                                                     maxlength="5"
+                                                                                                     size="5"><br>
+    <label style="font-size: 125%">PLZ, Ort</label><input type="text" [value]="" (input)="plz = $event.target.value"
+                                                          placeholder="PLZ" maxlength="5" size="5"><input
+    type="text" value="" placeholder="Ort" (input)="ort = $event.target.value" size="20" maxlength="20">
+    <br>
+    <br>
+    <p style="font-size: 125%">Zusammenfassung</p>
+
+    <div style="font-size: 125%; border: 1px solid; width: 100%">
+      <table>
+        {{vorname}}
+        {{nachname}}
+        <br>
+        {{strasse}}
+        {{hnr}}
+        <br>
+        {{plz}}
+        {{ort}}
+      </table>
+
+    </div>
+    <a href="/payment/bank-transfer-information"><button (click)="goToTransferInfo()"  type="button" class="btn btn-primary"> Speichern und Weiter</button></a>
+    </div>
+  </div>
+</div>
