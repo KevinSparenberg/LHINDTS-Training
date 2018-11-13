@@ -1,24 +1,50 @@
-
-<p>
-  {{productSummary}}
-</p>
-
 <div>
-  ID: {{pizza2.id}} - {{pizza2.name}} - Preis: {{pizza2.price}} - Radius: {{pizza2.radius}}
-</div>
-<br>
-<div>
-    {{selctedPizzaSize.sizeType}} - {{selctedPizzaSize.id}} - {{selctedPizzaSize.radius}}
-</div>
-
-<a href="/shopping-cart"><button>Zur Kasse <i style="font-size: 1.0em;" class="fa fa-chevron-circle-right"></i></button></a>
 
 
-<div>
-  <ul style="list-style: none; text-align: left">
-      <li *ngFor="let pizza of pizzen">
-           {{pizza.id}} - {{pizza.name}} - {{pizza.price}}€ - Radius: {{pizza.radius}}
+  <p>
+    {{productSummary}}
+  </p>
+
+  <div>
+    <ul style="list-style: none; text-align: left">
+      <li *ngFor="let selectedPizzaDetails of pizzen">
+        {{selectedPizzaDetails.name + ","}} {{selectedPizzaDetails.radius + " cm,"}} {{selectedPizzaDetails.price + "Euro"}}
+        <div style="text-align: right">
+          <button (click)="deleteselectedPizzaDetails(selectedPizzaDetails)" style="float: end" type="button" class="btn btn-danger">Delete</button>
+        </div>
+
       </li>
-  </ul>
-</div>
 
+    </ul>
+  </div>
+
+  <br>
+  <div style="text-align: left">
+    <p>Selbstzusammengestellt Pizzen</p>
+    <div *ngIf="selctedPizzaSize != null">
+    Size:ID: {{selctedPizzaSize.id}} - Type: {{selctedPizzaSize.sizeType}} Radius:- {{selctedPizzaSize.radius}} - Preis:
+    {{selctedPizzaSize.price}} €<br>
+
+      <button (click)="deleteselctedPizzaSize(selctedPizzaSize)" type="button" class="btn btn-danger">Delete</button>
+
+    </div>
+
+
+
+    <div>
+      <ul style="list-style: none;text-align: left">
+        <li *ngFor="let ingre of allSelectedIngrediants">
+
+          {{ingre.name}} - {{ingre.price | number:'1.2-2' }} €
+          <div style="text-align: right">
+            <button (click)="deleteselectedIngrediants(ingre)" style="float: end" type="button" class="btn btn-danger">Delete</button>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+  <a href="/shopping-cart">
+    <button>Zur Kasse {{gesamtSumme}} €<i style="font-size: 1.0em;" class="fa fa-chevron-circle-right"></i></button>
+  </a>
+</div>

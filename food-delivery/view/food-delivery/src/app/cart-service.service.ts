@@ -3,6 +3,7 @@ import {Observable, of, Subject} from 'rxjs';
 import {Pizza} from "./pizza";
 import {Size} from "@angular-devkit/build-angular/src/angular-cli-files/utilities/bundle-calculator";
 import {Sizes} from "./sizes";
+import {Ingredients} from "./ingredients";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class CartServiceService {
 
    _numberOfSales:Subject<number>=new Subject();
    selectedPizza:Subject<Pizza>=new Subject();
-  selectedSize:Subject<Sizes>=new Subject();
+   selectedSize:Subject<Sizes>=new Subject();
+   selectedIngediants:Subject<Ingredients>=new Subject();
    allPizzas:Pizza[];
 
   constructor() {
@@ -27,7 +29,6 @@ export class CartServiceService {
   }
 
   setPizza(pizzer:Pizza){
-    //this.allPizzas.push(pizzer);
     this.selectedPizza.next(pizzer);
   }
 
@@ -37,11 +38,18 @@ export class CartServiceService {
 
   setSelectedSize(size:Sizes){
     this.selectedSize.next(size);
-    alert("Service setSelectedSize"+ size.sizeType);
   }
 
   getSelectedSize(){
     return this.selectedSize;
+  }
+
+  setSelectedIngrediant(ingrediants:Ingredients){
+    this.selectedIngediants.next(ingrediants);
+  }
+
+  getSelectedIngrdiant(){
+    return this.selectedIngediants;
   }
 
 }

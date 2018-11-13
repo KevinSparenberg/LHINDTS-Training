@@ -1,6 +1,6 @@
 
 
-<div style="display: inline-block;float: left;border: 1px solid;">
+<div style="display: inline-block;float: left;">
   <button (click)="showDiffSizes()">Größe</button>
   <div *ngIf="diffSizes">
       Hier können verschiedene Größen ausgewählt werden.
@@ -8,19 +8,20 @@
       <ul>
         <form action="">
           <li *ngFor="let size  of sizes" style="list-style: none; text-align: left">
-            <input (click)="selectedSize(size)" type="radio" name="gender" value="{{size.id}}"><span>{{size.id}}</span> - Typ: {{size.sizeType}} - Radius: {{size.radius}}
+            <input (click)="selectedSize(size)" type="radio" name="gender" value="{{size.id}}"><span>{{size.id}}</span> - Typ: {{size.sizeType}} - Radius: {{size.radius}} - Preis: {{size.price}} €
           </li>
         </form>
       </ul>
     </div>
-    <button (click)="showDiffIngredients()">Weiter</button>
+    <button (click)="showDiffIngredients()">Weiter <i style="font-size: 1.0em;" class="fa fa-chevron-circle-right"></i></button>
   </div>
+
 </div>
 
 
 
 
-<div style="display: inline-block;float:left;border: 1px solid;">
+<div style="display: inline-block;float:left;">
   <button (click)="showDiffIngredients()">Zutaten</button>
   <div *ngIf="diffIngredients">
       Hier können verschiedene Zutaten hinzugefügt werden.
@@ -29,28 +30,26 @@
         <ul>
           <form action="">
             <li *ngFor="let ingrediant of ingrediants" style="list-style: none; text-align: left">
-              <input (click)="selectedIngrediant(ingrediant)" type="checkbox" value="{{ingrediant.id}}">  {{ingrediant.name}}
+              <!--TODO Dezimalnummer Ausgabe korrekt mit zwei Nachkommastellen anzeigen lassen-->
+              <input (click)="selectedIngrediant(ingrediant)" type="checkbox" value="{{ingrediant.id}}">  {{ingrediant.name + ","}} {{ingrediant.price | number:'1.2-2'}}
             </li>
           </form>
         </ul>
     </div>
+   <!-- <br>
+    <input [value]="favIngrediant" (input)="favIngrediant = $event.target.value" placeholder="Ihre Wunschzutat: ">
     <br>
-    <button (click)="showDiffSizes()">< Zurück</button><button (click)="showDeliveryTime()"> Weiter > </button>
-    <div>
-      Ausgewählte Zutaten:
-      <ul>
-        <li *ngFor="let ingr of allSelectedIngredients">
-         {{ingr.id}} {{ingr.name}}
-        </li>
-      </ul>
-    </div>
+    <p>Zutat: {{favIngrediant}}</p>
+    <button (click)="addIngrediant()">Hinzufügen</button>-->
+    <br>
+    <button (click)="showDiffSizes()"><i style="font-size: 1.0em;" class="fa fa-chevron-circle-left"></i> Zurück</button><button (click)="showDeliveryTime()"> Weiter <i style="font-size: 1.0em;" class="fa fa-chevron-circle-right"></i> </button>
 
   </div>
 
 </div>
 
 
-<div style="display: inline-block;float:left;border: 1px solid;">
+<div style="display: inline-block;float:left;">
   <div>
     <button (click)="showDeliveryTime()">Lieferdatum</button>
   </div>
@@ -67,6 +66,6 @@
 
     </div>
     <br>
-    <button (click)="showDiffIngredients()">< Zurück</button>
+    <button (click)="showDiffIngredients()"><i style="font-size: 1.0em;" class="fa fa-chevron-circle-left"></i> Zurück</button>
   </div>
 </div>
