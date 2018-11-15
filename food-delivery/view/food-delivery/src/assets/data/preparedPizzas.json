@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza Magaritha",
+    "price": 5,
+    "radius": 24
+  },
+  {
+    "id": 2,
+    "name": "Pizza Salami",
+    "price": 5.5,
+    "radius": 26
+  },
+  {
+    "id": 3,
+    "name": "Pizza Hawai",
+    "price": 6,
+    "radius": 28
+  },
+  {
+    "id": 4,
+    "name": "Pizza Thunfisch",
+    "price": 6.5,
+    "radius": 30
+  },
+  {
+    "id": 5,
+    "name": "Pizza Parma",
+    "price": 7,
+    "radius": 26
+  }
+]
