@@ -32,7 +32,7 @@
 
 
     <div>
-      <ul style="list-style: none;text-align: left">
+      <ul  style="list-style: none;text-align: left">
         <li *ngFor="let ingre of allSelectedIngrediants">
 
           {{ingre.name}} - {{ingre.price | number:'1.2-2' }} €
@@ -47,4 +47,8 @@
   <a href="/shopping-cart">
     <button>Zur Kasse {{gesamtSumme}} €<i style="font-size: 1.0em;" class="fa fa-chevron-circle-right"></i></button>
   </a>
+  <div>
+    Verwendungszweck: {{purposeOfUse}}
+</div>
+
 </div>

@@ -20,6 +20,9 @@ import {CustomizedPizzaComponent} from './components/customized-pizza/customized
 import {CustomMaterialModule} from "./core/material.module";
 import {DlDateTimePickerDateModule} from 'angular-bootstrap-datetimepicker';
 import {DlDateTimePickerModule} from "angular-bootstrap-datetimepicker";
+import { DeliveryAddressComponent } from './components/payment/delivery-address/delivery-address.component';
+import { BankTransferInformationComponent } from './components/payment/bank-transfer-information/bank-transfer-information.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import {DlDateTimePickerModule} from "angular-bootstrap-datetimepicker";
     HomeComponent,
     SummaryComponent,
     PreparedPizzaComponent,
-    CustomizedPizzaComponent
+    CustomizedPizzaComponent,
+    DeliveryAddressComponent,
+    BankTransferInformationComponent,
   ],
   imports: [
     DlDateTimePickerDateModule,
@@ -47,7 +52,8 @@ import {DlDateTimePickerModule} from "angular-bootstrap-datetimepicker";
     MatIconModule,
     MatDatepickerModule,
     BrowserAnimationsModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    HttpClientModule
   ],
   providers: [],
 

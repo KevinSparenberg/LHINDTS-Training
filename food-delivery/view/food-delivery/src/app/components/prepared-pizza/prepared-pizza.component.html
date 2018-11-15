@@ -15,6 +15,26 @@
     </div>
   <button style="background-color:forestgreen;border-radius: .1em;border-style: none" (click)="addPizzaToCart()">Hinzufügen</button>
 
+  <p>Aus JSON Datei ausgelesenden Inhalt</p>
+  <div>
+    <div>
+      <!--variablennamen vllt umbennen-->
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Radius</th>
+      </tr>
+      <tr *ngFor="let pizza of pizzaJSON">
+        <input type="checkbox">
+        <td> {{pizza.id}}</td>
+        <td> {{pizza.name}}</td>
+        <td> {{pizza.price}}</td>
+        <td> {{pizza.radius}}</td>
+      </tr>
+    </div>
+  </div>
+
 </div>
 
 

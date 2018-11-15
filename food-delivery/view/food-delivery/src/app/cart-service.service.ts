@@ -17,37 +17,68 @@ export class CartServiceService {
    selectedIngediants:Subject<Ingredients>=new Subject();
    allPizzas:Pizza[];
 
+  /**
+   *
+   */
   constructor() {
   }
 
+  /**
+   *
+   * @param value
+   */
   setNumberOfSales(value:number){
     this._numberOfSales.next(value);
   }
 
+  /**
+   *
+   */
   getSubr(){
       return this._numberOfSales;
   }
 
+  /**
+   *
+   * @param pizzer
+   */
   setPizza(pizzer:Pizza){
     this.selectedPizza.next(pizzer);
   }
 
+  /**
+   *
+   */
   getPizza(){
     return this.selectedPizza;
   }
 
+  /**
+   *
+   * @param size
+   */
   setSelectedSize(size:Sizes){
     this.selectedSize.next(size);
   }
 
+  /**
+   *
+   */
   getSelectedSize(){
     return this.selectedSize;
   }
 
+  /**
+   *
+   * @param ingrediants
+   */
   setSelectedIngrediant(ingrediants:Ingredients){
     this.selectedIngediants.next(ingrediants);
   }
 
+  /**
+   *
+   */
   getSelectedIngrdiant(){
     return this.selectedIngediants;
   }

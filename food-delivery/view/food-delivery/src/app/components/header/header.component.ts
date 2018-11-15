@@ -13,6 +13,10 @@ export class HeaderComponent implements OnInit {
   login = "Login";
   numberOfSales;
 
+  /**
+   *
+   * @param cartService
+   */
   constructor(private cartService:CartServiceService) {
     this.cartService.getSubr().subscribe(anzahl => this.numberOfSales = anzahl);
   }

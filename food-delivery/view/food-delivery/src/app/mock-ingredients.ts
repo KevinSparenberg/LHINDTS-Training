@@ -1,6 +1,8 @@
 import {Ingredients} from './ingredients';
 
-
+/**
+ *
+ */
 export const INGREDIANTS: Ingredients[] = [
   {id: 1, name: 'Zwiebeln', price: 0.50},
   {id: 2, name: 'Käse', price: 0.50},

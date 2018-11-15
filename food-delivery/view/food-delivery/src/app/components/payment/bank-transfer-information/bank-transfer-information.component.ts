@@ -16,26 +16,38 @@ export class BankTransferInformationComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   *
+   * @param iban
+   * @param kntInhaber
+   * @param bic
+   * @param vwdzw
+   */
   bezahlt(iban,kntInhaber,bic,vwdzw) {
-    //this.ibanCheck = document.getElementById("iban1").toString().valueOf().length;
-
-    if (iban.valueOf().length == 0 || kntInhaber.valueOf().length == 0 || bic.valueOf().length == 0 || vwdzw.valueOf().length == 0 ) {
-      if(iban.valueOf().length == 0){
-        alert("Bitte geben sie eine gültige IBAN ein! ");
+    if (iban.valueOf().length == 0 || kntInhaber.valueOf().length == 0 || bic.valueOf().length == 0 || vwdzw.valueOf().length == 0 || iban.valueOf().length < 22) {
+      if(iban.valueOf().length == 0 || iban.valueOf().length < 22){
+        if(iban.valueOf().length == 0){
+          alert("Bitte geben sie eine gültige IBAN ein! ");
+        }else {
+          alert("Ihre IBAN muss mind 22 Zeichen lang sein!")
+        }
       }else if (kntInhaber.valueOf().length == 0){
         alert("Bitte geben sie einen gültigen Kontoinhaber an! ");
+
       }else if(bic.valueOf().length == 0){
         alert("Bitte geben sie eine gültige BIC an! ");
+
       }else if(vwdzw.valueOf().length == 0){
         alert("Bitte geben sie eine gültige Verwendungszweck an! ");
+
       }
 
     } else {
       alert("Bestellung erfolgreich!");
       alert("Vielen Dank für Ihren Einkauf!")
       //TODO: Open HomeComponent
-      window.open("/home");
-    }
 
+    }
+    //window.open("/home");
   }
 }

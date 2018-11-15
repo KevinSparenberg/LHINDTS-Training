@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {PIZZAS} from "../../mock-pizza";
 import {CartServiceService} from "../../cart-service.service";
 import {Pizza} from "../../pizza";
+import {JsonReaderService} from "../../services/json-reader.service";
 @Component({
   selector: 'app-prepared-pizza',
   templateUrl: './prepared-pizza.component.html',
@@ -13,14 +14,23 @@ export class PreparedPizzaComponent implements OnInit {
   addToTheCart:boolean;
 
   pizzaObject:Pizza;
+  pizzaJSON: Pizza[];
 
-  constructor(private cartService:CartServiceService) {
+  /**
+   *
+   * @param cartService
+   */
+  constructor(private cartService:CartServiceService, private jsonReaderService: JsonReaderService) {
     this.cartService.setNumberOfSales(this._numberofPizzaSales);
   }
 
   ngOnInit() {
+    this.jsonReaderService.getPrepPizzaJSON().subscribe((recPizzaData) => this.pizzaJSON = recPizzaData);
   }
 
+  /**
+   *
+   */
   addPizzaToCart(){
     this._numberofPizzaSales++;
     this.cartService.setNumberOfSales(this._numberofPizzaSales);
@@ -28,11 +38,17 @@ export class PreparedPizzaComponent implements OnInit {
     this.showSummary();
   }
 
+  /**
+   *
+   */
   private showSummary() {
       this.cartService.setPizza(this.pizzaObject);
   }
 
-  //ToDo: Pizza soll erst dann in Summary angezeigt werden, wenn addPizzaToCart() ausgeführt wurde
+  /**
+   *
+   * @param pizzaName
+   */
   selectedPizza(pizzaName){
       this.pizzaObject=pizzaName;
   }

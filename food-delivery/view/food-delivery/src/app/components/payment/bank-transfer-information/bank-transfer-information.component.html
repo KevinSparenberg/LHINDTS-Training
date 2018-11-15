@@ -7,10 +7,10 @@
         <p style="font-size: 125%;font-weight: bold">
           Zahlungsabwicklung
         </p>
-    <label size="15" minlength="15">Kontoinhaber: </label><input id="kntInhaberId" type="text" (input)="kontoinhaber = $event.target.value"><br>
-    <label  size="15" minlength="15">IBAN: </label><input id="ibanId" type="text" (input)="iban = $event.target.value"><br>
-    <label size="15" minlength="15">BIC: </label><input id="bicId" type="text" (input)="bic = $event.target.value"><br>
-    <label size="15" minlength="15">Verwendungszweck: </label><input id="vwdzwID" type="text" (input)=" verwendungszweck = $event.target.value">
+    <label size="15" minlength="22">Kontoinhaber: </label><input id="kntInhaberId" type="text" (input)="kontoinhaber = $event.target.value"><br>
+    <label  size="15" minlength="22">IBAN: </label><input  maxlength="22" id="ibanId" type="text" (input)="iban = $event.target.value"><br>
+    <label size="15" minlength="22">BIC: </label><input id="bicId" type="text" (input)="bic = $event.target.value"><br>
+    <label size="15" minlength="22">Verwendungszweck: </label><input id="vwdzwID" type="text" (input)=" verwendungszweck = $event.target.value">
 
 
     <div style="max-width: 60%; padding-top: 10%">
@@ -18,9 +18,11 @@
       Knt.Inhaber: {{kontoinhaber}}<br>
       IBAN: {{iban}}<br>
       BIC: {{bic}}<br>
+
       Verwendungszweck: {{verwendungszweck}}<br>
+
     </div>
-    <a ><button (click)="bezahlt(iban,kontoinhaber,bic,verwendungszweck)">Bezahlen</button></a>
+    <a (click)="bezahlt(iban,kontoinhaber,bic,verwendungszweck)"><button>Bezahlen</button></a>
 </div>
 
 </div>

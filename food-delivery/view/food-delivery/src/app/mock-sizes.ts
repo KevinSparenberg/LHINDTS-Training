@@ -1,5 +1,8 @@
 import { Sizes} from "./sizes";
 
+/**
+ *
+ */
 export const SIZES: Sizes[]=[
   {id:1, radius: 24, sizeType:'Small', price:5},
   {id:2, radius: 26, sizeType:'Small+', price:5.5},

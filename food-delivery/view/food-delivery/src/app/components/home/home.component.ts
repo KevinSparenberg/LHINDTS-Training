@@ -9,17 +9,25 @@ export class HomeComponent implements OnInit {
   numberOfSales=0;
   showCustomized=false;
   showPrepared=true;
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
+  /**
+   *
+   */
   individuel(){
     this.showPrepared=false;
     this.showCustomized=true;
 
   }
 
+  /**
+   *
+   */
   prepared(){
     this.showCustomized=false;
     this.showPrepared=true;
