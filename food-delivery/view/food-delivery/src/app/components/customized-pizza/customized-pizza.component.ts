@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {SIZES} from "../../mock-sizes";
-import {INGREDIANTS} from "../../mock-ingredients";
-import {MatButton} from "@angular/material";
-import {Ingredients} from "../../ingredients";
-import {CartServiceService} from "../../cart-service.service";
-import {Sizes} from "../../sizes";
-import {JsonReaderService} from "../../services/json-reader.service";
+import { SIZES} from "../../mocks/mock-sizes";
+import {INGREDIANTS} from "../../mocks/mock-ingredients";
+import {Ingredients} from "../../models/ingredients";
+import { CartServiceService} from "../../services/cartService/cart-service.service";
+import { Sizes} from "../../models/sizes";
+import {JsonReaderService} from "../../services/jsonReaderService/json-reader.service";
 
 @Component({
   selector: 'app-customized-pizza',
@@ -30,7 +29,7 @@ export class CustomizedPizzaComponent implements OnInit {
   ngOnInit() {
     //jsonData corresponds to a lamda object, and you cannot do without the spelling "jsonData => this.ingrFromJSON = jsonData".
     this.jsonService.getIngrediantsJSON().subscribe(jsonData => this.ingrFromJSON = jsonData);
-    this.jsonService.getSizesJSON().subscribe((jsonData)=>this.sizesJSON = jsonData);
+    this.jsonService.getSizesJSON().subscribe((jsonData) => this.sizesJSON = jsonData);
   }
 
   /**
@@ -84,7 +83,7 @@ export class CustomizedPizzaComponent implements OnInit {
     alert("Lieferdatum ausgewählt. ");
   }
 
-     ingredTests(name: Ingredients) {
+  ingredTests(name: Ingredients) {
     console.log(name)
 
   }

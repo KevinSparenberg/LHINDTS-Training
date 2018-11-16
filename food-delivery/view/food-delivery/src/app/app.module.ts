@@ -18,8 +18,8 @@ import {SummaryComponent} from './components/summary/summary.component';
 import {PreparedPizzaComponent} from './components/prepared-pizza/prepared-pizza.component';
 import {CustomizedPizzaComponent} from './components/customized-pizza/customized-pizza.component';
 import {CustomMaterialModule} from "./core/material.module";
-import {DlDateTimePickerDateModule} from 'angular-bootstrap-datetimepicker';
-import {DlDateTimePickerModule} from "angular-bootstrap-datetimepicker";
+/*import {DlDateTimePickerDateModule} from 'angular-bootstrap-datetimepicker';
+import {DlDateTimePickerModule} from "angular-bootstrap-datetimepicker";*/
 import { DeliveryAddressComponent } from './components/payment/delivery-address/delivery-address.component';
 import { BankTransferInformationComponent } from './components/payment/bank-transfer-information/bank-transfer-information.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -41,8 +41,8 @@ import {HttpClientModule} from "@angular/common/http";
     BankTransferInformationComponent,
   ],
   imports: [
-    DlDateTimePickerDateModule,
-    DlDateTimePickerModule,
+/*    DlDateTimePickerDateModule,
+    DlDateTimePickerModule,*/
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
@@ -61,8 +61,8 @@ import {HttpClientModule} from "@angular/common/http";
 
   exports: [
     CustomMaterialModule,
-    MatDatepickerModule,
-    DlDateTimePickerDateModule
+/*    MatDatepickerModule,
+    DlDateTimePickerDateModule*/
   ]
 })
 export class AppModule {

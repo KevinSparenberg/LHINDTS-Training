@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'payment/deliveryaddress', component: DeliveryAddressComponent},
   {path: 'payment/bank-transfer-information', component: BankTransferInformationComponent},
   {path: '**', component: HomeComponent},
-  {path: "", component:HomeComponent},
+  {path: "", component: HomeComponent},
 
 ];
 @NgModule({

@@ -1,4 +1,5 @@
-import { Sizes} from "../sizes";
+
+import {Sizes} from "../models/sizes";
 
 /**
  *

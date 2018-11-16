@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Pizza} from "../../pizza";
-import {CartServiceService} from "../../cart-service.service";
-import {Size} from "@angular-devkit/build-angular/src/angular-cli-files/utilities/bundle-calculator";
-import {Sizes} from "../../sizes";
-import {Ingredients} from "../../ingredients";
+import {Pizza} from "../../models/pizza";
+import {CartServiceService} from "../../services/cartService/cart-service.service";
+import {Sizes} from "../../models/sizes";
+import {Ingredients} from "../../models/ingredients";
 
 @Component({
   selector: 'app-summary',

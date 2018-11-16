@@ -1,8 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PIZZAS} from "../../mock-pizza";
-import {CartServiceService} from "../../cart-service.service";
-import {Pizza} from "../../pizza";
-import {JsonReaderService} from "../../services/json-reader.service";
+import {PIZZAS} from "../../mocks/mock-pizza";
+import {CartServiceService} from "../../services/cartService/cart-service.service";
+import {Pizza} from "../../models/pizza";
+import {JsonReaderService} from "../../services/jsonReaderService/json-reader.service";
+
 @Component({
   selector: 'app-prepared-pizza',
   templateUrl: './prepared-pizza.component.html',

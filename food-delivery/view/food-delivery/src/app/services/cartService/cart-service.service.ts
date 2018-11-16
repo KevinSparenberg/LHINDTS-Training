@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Observable, of, Subject} from 'rxjs';
-import {Pizza} from "./models/pizza";
-import {Size} from "@angular-devkit/build-angular/src/angular-cli-files/utilities/bundle-calculator";
-import {Sizes} from "./models/sizes";
-import {Ingredients} from "./models/ingredients";
+import {Pizza} from "../../models/pizza";
+import {Sizes} from "../../models/sizes";
+import {Ingredients} from "../../models/ingredients";
+
 
 @Injectable({
   providedIn: 'root'

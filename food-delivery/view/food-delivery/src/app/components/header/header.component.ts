@@ -1,5 +1,6 @@
 import {Component, Injectable, OnInit} from '@angular/core';
-import  {CartServiceService} from "../../cart-service.service";
+import {CartServiceService} from "../../services/cartService/cart-service.service";
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
